@@ -1,0 +1,356 @@
+{
+  "saison": "2026-2027",
+  "club": "14-CBCC",
+  "generated_at": "2026-11-12T19:25:14.347Z",
+  "status": "ok",
+  "competitions": [
+    {
+      "division": "Pré-Nationale",
+      "statut": "ok",
+      "rencontres": 4,
+      "url": "https://icbad.ffbad.org/competition/2601036"
+    },
+    {
+      "division": "Régionale 1",
+      "statut": "ok",
+      "rencontres": 6,
+      "url": "https://icbad.ffbad.org/competition/2601037"
+    },
+    {
+      "division": "Régionale 2",
+      "statut": "ok",
+      "rencontres": 4,
+      "url": "https://icbad.ffbad.org/competition/2601038"
+    },
+    {
+      "division": "Départementale 1",
+      "statut": "ok",
+      "rencontres": 15,
+      "url": "https://icbad.ffbad.org/competition/2603001"
+    },
+    {
+      "division": "Challenge",
+      "statut": "ok",
+      "rencontres": 6,
+      "url": "https://icbad.ffbad.org/competition/2603588"
+    }
+  ],
+  "warnings": [],
+  "rencontres": [
+    {
+      "equipe": "CBCC 2",
+      "division": "Pré-Nationale",
+      "adversaire": "ESPBAD-1",
+      "journee": 1,
+      "score": "6-2",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778613"
+    },
+    {
+      "equipe": "CBCC 2",
+      "division": "Pré-Nationale",
+      "adversaire": "ESF-1",
+      "journee": 1,
+      "score": "4-4",
+      "statut": "Nul",
+      "source": "https://icbad.ffbad.org/rencontre/778617"
+    },
+    {
+      "equipe": "CBCC 3",
+      "division": "Régionale 1",
+      "adversaire": "LVB-1",
+      "journee": 1,
+      "score": "7-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778652"
+    },
+    {
+      "equipe": "CBCC 3",
+      "division": "Régionale 1",
+      "adversaire": "ALCL-3",
+      "journee": 1,
+      "score": "7-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778665"
+    },
+    {
+      "equipe": "CBCC 4",
+      "division": "Régionale 1",
+      "adversaire": "YBC-1",
+      "journee": 1,
+      "score": "5-3",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778692"
+    },
+    {
+      "equipe": "CBCC 4",
+      "division": "Régionale 1",
+      "adversaire": "BLD-1",
+      "journee": 1,
+      "score": "3-5",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/778693"
+    },
+    {
+      "equipe": "CBCC 5",
+      "division": "Régionale 2",
+      "adversaire": "SABA-1",
+      "journee": 1,
+      "score": "3-5",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/778724"
+    },
+    {
+      "equipe": "CBCC 5",
+      "division": "Régionale 2",
+      "adversaire": "ASL-1",
+      "journee": 1,
+      "score": "5-3",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778760"
+    },
+    {
+      "equipe": "CBCC 6",
+      "division": "Départementale 1",
+      "adversaire": "ESF-3",
+      "journee": 1,
+      "score": "4-3",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/797458"
+    },
+    {
+      "equipe": "CBCC 6",
+      "division": "Départementale 1",
+      "adversaire": "ASLI-1",
+      "journee": 1,
+      "score": "4-3",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/797459"
+    },
+    {
+      "equipe": "CBCC 7",
+      "division": "Départementale 1",
+      "adversaire": "CBCC-8",
+      "journee": 1,
+      "score": "2-5",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/805712"
+    },
+    {
+      "equipe": "CBCC 7",
+      "division": "Départementale 1",
+      "adversaire": "ASLNM-1",
+      "journee": 1,
+      "score": "5-2",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/805713"
+    },
+    {
+      "equipe": "CBCC 8",
+      "division": "Départementale 1",
+      "adversaire": "CBCC-7",
+      "journee": 1,
+      "score": "5-2",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/805712"
+    },
+    {
+      "equipe": "CBCC 8",
+      "division": "Départementale 1",
+      "adversaire": "CBBE-1",
+      "journee": 1,
+      "score": "6-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/805714"
+    },
+    {
+      "equipe": "CBCC 9",
+      "division": "Départementale 1",
+      "adversaire": "BCD-1",
+      "journee": 1,
+      "score": "6-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/805836"
+    },
+    {
+      "equipe": "CBCC 10",
+      "division": "Départementale 1",
+      "adversaire": "PAB-6",
+      "journee": 1,
+      "score": "4-3",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/797520"
+    },
+    {
+      "equipe": "CBCC 10",
+      "division": "Départementale 1",
+      "adversaire": "BED-1",
+      "journee": 1,
+      "score": "6-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/797517"
+    },
+    {
+      "equipe": "CBCC 11",
+      "division": "Départementale 1",
+      "adversaire": "EVC-3",
+      "journee": 1,
+      "score": "0-7",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/797533"
+    },
+    {
+      "equipe": "CBCC 11",
+      "division": "Départementale 1",
+      "adversaire": "PAB-7",
+      "journee": 1,
+      "score": "4-3",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/797535"
+    },
+    {
+      "equipe": "CBCC 12",
+      "division": "Départementale 1",
+      "adversaire": "BAPADOZ-1",
+      "journee": 1,
+      "score": "5-2",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/797847"
+    },
+    {
+      "equipe": "CBCC 12",
+      "division": "Départementale 1",
+      "adversaire": "USP-2",
+      "journee": 1,
+      "score": "6-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/797849"
+    },
+    {
+      "equipe": "CBCC 13",
+      "division": "Départementale 1",
+      "adversaire": "AGD-1",
+      "journee": 1,
+      "score": "3-4",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/797867"
+    },
+    {
+      "equipe": "CBCC 13",
+      "division": "Départementale 1",
+      "adversaire": "ASLI-3",
+      "journee": 1,
+      "score": "3-4",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/797870"
+    },
+    {
+      "equipe": "CBCC 14",
+      "division": "Challenge",
+      "adversaire": "CBCC-15",
+      "journee": 1,
+      "score": "5-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/809054"
+    },
+    {
+      "equipe": "CBCC 14",
+      "division": "Challenge",
+      "adversaire": "CBBE-4",
+      "journee": 1,
+      "score": "6-0",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/809057"
+    },
+    {
+      "equipe": "CBCC 15",
+      "division": "Challenge",
+      "adversaire": "CBCC-14",
+      "journee": 1,
+      "score": "1-5",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/809054"
+    },
+    {
+      "equipe": "CBCC 15",
+      "division": "Challenge",
+      "adversaire": "BOB-5",
+      "journee": 1,
+      "score": "2-4",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/809056"
+    },
+    {
+      "equipe": "CBCC 16",
+      "division": "Challenge",
+      "adversaire": "BPCL-1",
+      "journee": 1,
+      "score": "1-5",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/809558"
+    },
+    {
+      "equipe": "CBCC 16",
+      "division": "Challenge",
+      "adversaire": "CBBE-5",
+      "journee": 1,
+      "score": "2-4",
+      "statut": "Défaite",
+      "source": "https://icbad.ffbad.org/rencontre/809559"
+    },
+    {
+      "equipe": "CBCC 2",
+      "division": "Pré-Nationale",
+      "adversaire": "ALCL-2",
+      "journee": 2,
+      "score": "6-2",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778628"
+    },
+    {
+      "equipe": "CBCC 2",
+      "division": "Pré-Nationale",
+      "adversaire": "MDMSA-2",
+      "journee": 2,
+      "score": "6-2",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778631"
+    },
+    {
+      "equipe": "CBCC 3",
+      "division": "Régionale 1",
+      "adversaire": "IFS-2",
+      "journee": 2,
+      "score": "4-4",
+      "statut": "Nul",
+      "source": "https://icbad.ffbad.org/rencontre/778657"
+    },
+    {
+      "equipe": "CBCC 4",
+      "division": "Régionale 1",
+      "adversaire": "BUSF-1",
+      "journee": 2,
+      "score": "4-4",
+      "statut": "Nul",
+      "source": "https://icbad.ffbad.org/rencontre/778691"
+    },
+    {
+      "equipe": "CBCC 5",
+      "division": "Régionale 2",
+      "adversaire": "CBCA-1",
+      "journee": 2,
+      "score": "5-3",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778749"
+    },
+    {
+      "equipe": "CBCC 5",
+      "division": "Régionale 2",
+      "adversaire": "UCBB-1",
+      "journee": 2,
+      "score": "7-1",
+      "statut": "Victoire",
+      "source": "https://icbad.ffbad.org/rencontre/778745"
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08253b">
+  <meta name="description" content="Résultats des interclubs du Conquérant Badminton Club Caen. Sélectionnez une journée et préparez la publication de vos résultats.">
+  <title>Résultats interclubs · CBCC</title>
+  <style>
+    :root { color-scheme: light; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-synthesis: none; background: #f4f7f9; color: #142a3b; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 290px; }
+    a { color: #0b6b85; text-underline-offset: 3px; }
+    button, select, textarea { font: inherit; }
+    button:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #49b7c7; outline-offset: 3px; }
+    .wrap { width: min(1060px, calc(100% - 36px)); margin-inline: auto; }
+    header { background: linear-gradient(135deg, #071c33, #0b4762); color: #fff; position: relative; overflow: hidden; }
+    header::after { content: ''; position: absolute; width: 330px; height: 330px; border: 1px solid #87d9df38; border-radius: 50%; right: -95px; top: -156px; box-shadow: 0 0 0 48px #52b2d110, 0 0 0 110px #52b2d108; pointer-events: none; }
+    .hero { position: relative; z-index: 1; padding: 31px 0 37px; }
+    .kicker { font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 760; color: #99e2e9; }
+    h1 { font-size: clamp(2rem, 5vw, 3.3rem); margin: 10px 0 12px; letter-spacing: -.045em; line-height: 1.08; font-weight: 820; }
+    .subtitle { color: #d2e4ea; margin: 0; font-size: .98rem; max-width: 650px; line-height: 1.5; }
+    main { padding: 22px 0 44px; }
+    .panel { background: #fff; padding: 24px; border: 1px solid #e2eaf0; border-radius: 17px; box-shadow: 0 8px 32px #0b294908; margin-bottom: 17px; }
+    h2 { font-size: 1.17rem; margin: 0; letter-spacing: -.02em; }
+    .panelhead { display: flex; align-items: baseline; gap: 12px; justify-content: space-between; flex-wrap: wrap; margin-bottom: 19px; }
+    .small { font-size: .82rem; color: #6b7f90; }
+    .filters { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    label { display: block; font-size: .84rem; font-weight: 720; margin-bottom: 8px; }
+    select { display: block; width: 100%; min-height: 49px; border: 1px solid #beced8; background: #fff; border-radius: 10px; color: #1b3041; padding: 10px 12px; cursor: pointer; }
+    .status { background: #edf7f7; color: #19505a; padding: 13px 15px; border-radius: 10px; font-size: .89rem; line-height: 1.5; margin-top: 15px; }
+    .status.error { background: #fff2e9; color: #874d23; }
+    .status.neutral { background: #f0f4f7; color: #4a6275; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin-bottom: 18px; }
+    .stat { border-radius: 11px; background: #f2f6f8; padding: 12px; }
+    .stat strong { font-size: 1.45rem; display: block; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .stat span { font-size: .77rem; color: #657787; }
+    .resultgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .result { border: 1px solid #e1eaf0; border-radius: 12px; padding: 16px; min-width: 0; }
+    .reshead { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 13px; }
+    .team { font-weight: 820; font-size: 1.1rem; }
+    .tag { color: #536d7d; font-size: .72rem; padding: 5px 8px; background: #edf3f6; border-radius: 6px; text-align: right; }
+    .game { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .against { font-size: .78rem; color: #708392; margin-bottom: 4px; }
+    .opponent { font-weight: 650; overflow-wrap: anywhere; line-height: 1.3; }
+    .score { font-size: 1.9rem; font-weight: 820; font-variant-numeric: tabular-nums; letter-spacing: -.04em; white-space: nowrap; }
+    .win { color: #13805f; } .loss { color: #bc4152; } .draw { color: #806328; } .pending { color: #718494; }
+    .resfoot { display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; padding-top: 11px; border-top: 1px solid #eaf0f4; align-items: baseline; }
+    .outcome { font-size: .8rem; font-weight: 720; }
+    .source { font-size: .79rem; font-weight: 650; }
+    .empty { background: #f7fafb; border: 1px dashed #cddde5; color: #5d7181; border-radius: 12px; padding: 22px; font-size: .92rem; }
+    textarea { width: 100%; border: 1px solid #c7d4dd; padding: 15px; line-height: 1.6; border-radius: 10px; resize: vertical; min-height: 225px; color: #1c3343; background: #fbfdfe; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 12px; }
+    button { cursor: pointer; border: 0; border-radius: 10px; font-weight: 760; padding: 13px 20px; min-height: 46px; background: #0b647a; color: white; }
+    button.secondary { background: #e9f1f4; color: #104b61; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .feedback { color: #25715d; font-size: .85rem; }
+    details { color: #5e7283; margin-top: 13px; font-size: .85rem; }
+    details summary { cursor: pointer; font-weight: 660; }
+    details li { overflow-wrap: anywhere; line-height: 1.55; margin: 6px 0; }
+    .footnote { font-size: .81rem; color: #718395; line-height: 1.6; margin-top: 11px; }
+    footer { padding-bottom: 29px; color: #708291; font-size: .83rem; line-height: 1.6; }
+    @media (max-width: 710px) { .resultgrid { grid-template-columns: 1fr; } .panel { padding: 18px; } .hero { padding: 25px 0 31px; } }
+    @media (max-width: 430px) { .wrap { width: calc(100% - 24px); } .filters { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(2, 1fr); } .panelhead { margin-bottom: 15px; } .result { padding: 14px; } .score { font-size: 1.7rem; } button { flex-grow: 1; } }
+    @media (prefers-reduced-motion: no-preference) { button { transition: background-color .15s ease; } button:hover:not(:disabled) { filter: brightness(.94); } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap hero">
+    <div class="kicker">Conquérant Badminton Club Caen · Commission</div>
+    <h1>Résultats interclubs</h1>
+    <p class="subtitle">Choisissez une journée, consultez les rencontres du CBCC et copiez un texte prêt pour vos publications.</p>
+  </div></header>
+
+  <main class="wrap">
+    <section class="panel" aria-labelledby="title-select">
+      <div class="panelhead"><h2 id="title-select">Choisir une journée</h2><span id="season" class="small"></span></div>
+      <div class="filters">
+        <div><label for="day">Journée</label><select id="day" aria-label="Sélectionner la journée"></select></div>
+        <div><label for="division">Division</label><select id="division" aria-label="Filtrer par division"><option value="">Toutes les divisions</option></select></div>
+      </div>
+      <div id="sync" class="status neutral" role="status" aria-live="polite">Chargement des données enregistrées…</div>
+      <div id="warnings"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="title-results">
+      <div class="panelhead"><h2 id="title-results">Rencontres du CBCC</h2><span class="small" id="date"></span></div>
+      <div class="stats" id="stats" aria-label="Résumé des résultats"></div>
+      <div id="games" class="resultgrid"></div>
+      <div id="empty" class="empty" hidden>Aucune rencontre disponible pour cette sélection.</div>
+    </section>
+
+    <section class="panel" aria-labelledby="title-publication">
+      <div class="panelhead"><h2 id="title-publication">Publication prête à copier</h2><span class="small">Modifiable</span></div>
+      <label for="publication">Texte de la publication</label>
+      <textarea id="publication" spellcheck="true" placeholder="Les résultats apparaîtront ici après récupération…"></textarea>
+      <div class="actions">
+        <button id="copy" disabled>Copier le texte</button>
+        <button id="csv" class="secondary" disabled>Exporter en CSV</button>
+        <span id="feedback" class="feedback" role="status" aria-live="polite"></span>
+      </div>
+      <p class="footnote">Les scores à confirmer ne figurent pas dans le texte de publication. Vérifiez toujours les résultats officiels avant de publier. Une journée peut correspondre à des dates différentes selon les divisions.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">Outil de préparation de publications CBCC. Source : <a href="https://icbad.ffbad.org" target="_blank" rel="noopener noreferrer">ICBad / FFBaD</a>. Données actualisées automatiquement par GitHub Actions.</footer>
+
+  <script>
+    'use strict';
+    const el = id => document.getElementById(id);
+    const safe = s => String(s ?? '');
+    let db = {saison:'', status:'not_configured', generated_at:null, warnings:[], competitions:[], rencontres:[]};
+    let selected = [];
+    const labels = ['Rencontres','Victoires','Nuls','Défaites'];
+    const order = {Victoire:0, Nul:1, Défaite:2};
+
+    function option(value, name) { const n = document.createElement('option'); n.value = value; n.textContent = name; return n; }
+    function setText(id, text) { el(id).textContent = safe(text); }
+    function statusClass(s) { return s === 'Victoire' ? 'win' : s === 'Défaite' ? 'loss' : s === 'Nul' ? 'draw' : 'pending'; }
+    function allRows() { return Array.isArray(db.rencontres) ? db.rencontres : []; }
+    function completed(r) { return !!r.score && ['Victoire','Nul','Défaite'].includes(r.statut); }
+    function resultsDate(iso) { return new Intl.DateTimeFormat('fr-FR',{dateStyle:'medium',timeStyle:'short',timeZone:'Europe/Paris'}).format(new Date(iso)); }
+
+    function setupFilters() {
+      const rows = allRows();
+      const maxDay = Math.max(14, ...rows.map(r => Number(r.journee) || 1));
+      el('day').replaceChildren(...Array.from({length: Math.min(maxDay, 40)}, (_,i)=>option(String(i+1), 'Journée '+(i+1))));
+      el('day').value = String(rows.length ? Math.max(...rows.filter(completed).map(r=>Number(r.journee)), 1) : 1);
+      const divs = [...new Set([...(db.competitions || []).map(r=>r.division), ...rows.map(r=>r.division)].filter(Boolean))];
+      el('division').replaceChildren(option('','Toutes les divisions'),...divs.map(d=>option(d,d)));
+      setText('season', 'Saison '+(db.saison || '—'));
+    }
+
+    function renderSync() {
+      const container = el('sync');
+      let message = '';
+      let kind = 'neutral';
+      const age = db.generated_at ? Date.now() - new Date(db.generated_at).getTime() : NaN;
+      if (db.status === 'not_configured') {
+        message = 'Configuration initiale nécessaire : un administrateur doit renseigner les liens ICBad des compétitions dans le dépôt GitHub.';
+        kind = 'error';
+      } else if (db.status === 'partial') {
+        message = 'Synchronisation partielle : certaines divisions n’ont pas pu être récupérées. Voir les avertissements.';
+        kind = 'error';
+      } else if (db.status === 'unavailable') {
+        message = 'Résultats temporairement indisponibles. Vérifier le workflow GitHub.';
+        kind = 'error';
+      } else if (Number.isFinite(age) && age > 48*60*60*1000) {
+        message = 'Attention : résultats anciens (plus de 48 h). La dernière synchronisation est peut-être en échec.';
+        kind = 'error';
+      } else {
+        message = 'Données ICBad enregistrées par GitHub. Aucun accès direct à ICBad depuis votre téléphone.';
+      }
+      container.className = 'status '+kind;
+      container.textContent = message;
+      setText('date', db.generated_at ? 'Mis à jour le '+resultsDate(db.generated_at) : 'Pas encore actualisé');
+      const warnings = el('warnings');
+      warnings.replaceChildren();
+      if (db.warnings?.length) {
+        const details = document.createElement('details');
+        const summary = document.createElement('summary');
+        summary.textContent = 'Détails de synchronisation ('+db.warnings.length+')';
+        const ul = document.createElement('ul');
+        for (const w of db.warnings) {const li=document.createElement('li');li.textContent=safe(w);ul.append(li);}
+        details.append(summary,ul);
+        warnings.append(details);
+      }
+    }
+
+    function addStat(label, count) {
+      const item = document.createElement('div');item.className='stat';
+      const value = document.createElement('strong');value.textContent=String(count);
+      const title = document.createElement('span');title.textContent=label;
+      item.append(value,title);return item;
+    }
+    function gameCard(r) {
+      const card = document.createElement('article'); card.className='result';
+      const head = document.createElement('div');head.className='reshead';
+      const team = document.createElement('span');team.className='team';team.textContent=safe(r.equipe);
+      const division = document.createElement('span');division.className='tag';division.textContent=safe(r.division);
+      head.append(team,division);
+      const match = document.createElement('div');match.className='game';
+      const vs = document.createElement('div');
+      const label = document.createElement('div');label.className='against';label.textContent='Adversaire';
+      const opponent = document.createElement('div');opponent.className='opponent';opponent.textContent=safe(r.adversaire);
+      vs.append(label,opponent);
+      const score = document.createElement('strong');score.className='score '+statusClass(r.statut);score.textContent=r.score || '—';
+      match.append(vs,score);
+      const foot = document.createElement('div');foot.className='resfoot';
+      const outcome=document.createElement('span');outcome.className='outcome '+statusClass(r.statut);outcome.textContent=completed(r)?r.statut:'À confirmer';
+      const link=document.createElement('a');link.className='source';link.textContent='Voir sur ICBad';
+      if (typeof r.source==='string' && /^https:\/\/icbad\.ffbad\.org\//.test(r.source)) {
+        link.href=r.source;link.target='_blank';link.rel='noopener noreferrer';
+      } else {link.removeAttribute('href');}
+      foot.append(outcome,link);card.append(head,match,foot);return card;
+    }
+    function publication(rows) {
+      const confirmed=rows.filter(completed);
+      if (!confirmed.length) return '';
+      const lines=[`Résultats interclubs CBCC — J${el('day').value} (${db.saison})`,''];
+      for (const r of confirmed) lines.push(`• ${r.equipe} (${r.division}) : ${r.statut.toLowerCase()} ${r.score} contre ${r.adversaire}`);
+      return lines.join('\n');
+    }
+    function render() {
+      const day=Number(el('day').value), division=el('division').value;
+      selected=allRows().filter(r=>Number(r.journee)===day && (!division||r.division===division));
+      selected.sort((a,b)=>safe(a.equipe).localeCompare(safe(b.equipe),'fr',{numeric:true}) || (order[a.statut]??9)-(order[b.statut]??9));
+      const counts=[selected.length, ...['Victoire','Nul','Défaite'].map(s=>selected.filter(r=>r.statut===s).length)];
+      el('stats').replaceChildren(...labels.map((label,i)=>addStat(label,counts[i])));
+      el('games').replaceChildren(...selected.map(gameCard));
+      el('empty').hidden=selected.length>0;
+      el('publication').value=publication(selected);
+      el('copy').disabled=!el('publication').value;
+      el('csv').disabled=!selected.length;
+      setText('feedback','');
+    }
+    function csvValue(value) { const s=safe(value);return /[;\r\n"]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s; }
+    function downloadCsv() {
+      const fields=['journee','division','equipe','adversaire','score','statut','source'];
+      const rows=[fields.join(';'),...selected.map(r=>fields.map(f=>csvValue(r[f])).join(';'))];
+      const blob=new Blob(['\uFEFF'+rows.join('\r\n')],{type:'text/csv;charset=utf-8'});
+      const link=document.createElement('a');const url=URL.createObjectURL(blob);
+      link.href=url;link.download=`CBCC-${db.saison}-J${el('day').value}.csv`;
+      document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    }
+    el('day').addEventListener('change', render);
+    el('division').addEventListener('change', render);
+    el('csv').addEventListener('click', downloadCsv);
+    el('publication').addEventListener('input',()=>{el('copy').disabled=!el('publication').value;});
+    el('copy').addEventListener('click', async()=>{
+      try {await navigator.clipboard.writeText(el('publication').value);setText('feedback','Texte copié.');}
+      catch {el('publication').focus();el('publication').select();setText('feedback','Texte sélectionné : utilisez Copier.');}
+    });
+    (async()=>{
+      try {
+        const response=await fetch('./data/results.json?v='+Date.now(),{cache:'no-store'});
+        if (!response.ok) throw new Error('HTTP '+response.status);
+        db=await response.json();
+        if (!Array.isArray(db.rencontres) || !db.saison) throw new Error('Format de données invalide');
+        setupFilters();renderSync();render();
+      } catch(err) {
+        el('sync').className='status error';
+        setText('sync','Impossible de charger les données. Vérifier le déploiement GitHub Pages : '+err.message);
+        el('stats').replaceChildren();el('games').replaceChildren();el('empty').hidden=false;
+      }
+    })();
+  </script>
+</body>
+</html>

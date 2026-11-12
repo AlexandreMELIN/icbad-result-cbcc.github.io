@@ -1,0 +1,26 @@
+{
+  "saison": "2026-2027",
+  "club": "14-CBCC",
+  "competitions": [
+    {
+      "division": "Pré-Nationale",
+      "url": "https://icbad.ffbad.org/competition/2601036"
+    },
+    {
+      "division": "Régionale 1",
+      "url": "https://icbad.ffbad.org/competition/2601037"
+    },
+    {
+      "division": "Régionale 2",
+      "url": "https://icbad.ffbad.org/competition/2601038"
+    },
+    {
+      "division": "Départementale 1",
+      "url": "https://icbad.ffbad.org/competition/2603001"
+    },
+    {
+      "division": "Challenge",
+      "url": "https://icbad.ffbad.org/competition/2603588"
+    }
+  ]
+}

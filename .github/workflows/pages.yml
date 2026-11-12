@@ -1,0 +1,59 @@
+name: Actualiser les résultats CBCC et publier
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    # 4 actualisations par jour, en UTC (horaires légèrement différents l'été).
+    - cron: '0 0 * * *'
+      timezone: "Europe/Paris"
+
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: cbcc-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les fichiers
+        uses: actions/checkout@v4
+      - name: Préparer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Installer le parseur HTML
+        run: npm install --no-audit --no-fund
+      - name: Tester la récupération
+        run: npm test
+      - name: Récupérer les résultats ICBad
+        run: npm run update
+      - name: Préparer le site
+        run: |
+          mkdir -p public/data
+          cp index.html public/index.html
+          cp data/results.json public/data/results.json
+      - name: Configuration GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Préparer le site pour GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publier GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
