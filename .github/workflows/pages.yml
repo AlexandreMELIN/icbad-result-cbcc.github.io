@@ -6,7 +6,7 @@ on:
     branches: [main]
   schedule:
     # 4 actualisations par jour, en UTC (horaires légèrement différents l'été).
-    - cron: '0 18 * * *'
+    - cron: '0 16 * * *'
       timezone: "Europe/Paris"
 
 
